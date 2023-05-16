@@ -22,6 +22,13 @@ const [mit, apache, bsd, cczero] = badges;
     }
   }
 
+  function licenseCheck(license){
+    if (license === 'No License') {
+        return 'N/A';
+    }else{
+        return 'This proyect is licensed under the' + license + 'license'
+    }
+  }
   //README template
   const template = ({name, license, description, installation, usage, contribution, testing, contact, gitUser}) => 
 
@@ -71,7 +78,7 @@ Find me on github: [${gitUser}](https://github.com/${gitUser})
 
 ## License
 
-This proyect is licensed under the ${license} license`
+${licenseCheck(license)}`
 
 module.exports = {
     badges,
